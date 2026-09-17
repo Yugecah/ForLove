@@ -1,3 +1,4 @@
+
 const yesButton = document.getElementById("yesButton");
 const noButton = document.getElementById("noButton");
 const response = document.getElementById("response");
@@ -18,5 +19,4 @@ yesButton.addEventListener("click", () => {
 noButton.addEventListener("click", () => {
     response.textContent = "Hmm... try again 😭❤️";
 });
-
 
