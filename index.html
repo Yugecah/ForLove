@@ -1,203 +1,66 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Love 💗</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ffd6e7">
+    <meta name="description" content="A little place to relax and smile.">
+
+    <title>For You ❤️</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Floating decorations -->
-    <div class="star star1">✦</div>
-    <div class="star star2">✧</div>
-    <div class="star star3">♡</div>
-    <div class="star star4">✦</div>
+    <main class="page">
 
-    <main>
+        <section class="container">
 
-        <!-- HERO -->
-        <section class="hero">
-            <div class="bear">🧸</div>
+            <div class="outline"></div>
 
-            <h1>Hey, My Love 💗</h1>
+            <div class="content">
 
-            <p>
-                This little place is just for you.
-                Whenever you're tired, stressed, or having a bad day,
-                come here and take a little break. 🌷
-            </p>
+                <div class="heart" aria-hidden="true">
+                    ❤️
+                </div>
 
-            <div class="hero-message">
-                <span>🌸</span>
-                <strong>You don't have to be okay all the time.</strong>
-                <span>🌸</span>
-            </div>
-        </section>
+                <h1>Hey, you!</h1>
 
-
-        <!-- LOVE MESSAGE -->
-        <section class="card">
-            <h2>💌 A Little Message For You</h2>
-
-            <p>
-                I know there are days when everything feels overwhelming.
-                I just want you to remember that you don't have to carry
-                everything at once.
-            </p>
-
-            <p>
-                Take your time. Rest when you need to.
-                Breathe when things get too much.
-                And remember that you are doing your best. 🫶
-            </p>
-
-            <p class="special-message">
-                You deserve peaceful moments, happiness,
-                and lots of reasons to smile. 💕
-            </p>
-        </section>
-
-
-        <!-- LOVE QUESTION -->
-        <section class="card love-section">
-            <h2>🥺 One Important Question...</h2>
-
-            <div class="love-question">
-                Do you love me? 🥺👉👈
-            </div>
-
-            <div class="love-buttons">
-                <button id="yesButton" class="yes-button">
-                    YES 💗
-                </button>
-
-                <button id="noButton" class="no-button">
-                    NO 😭
-                </button>
-            </div>
-
-            <div id="loveAnswer" class="love-answer">
-                I LOVE YOU TOO! 💗🥺
-                <br>
-                Thank you for being you. 🌷
-            </div>
-        </section>
-
-
-        <!-- BREATHING -->
-        <section class="card">
-            <h2>🌿 Take A Little Breath</h2>
-
-            <p>
-                Let's slow everything down for a moment.
-                Follow the circle and breathe slowly.
-            </p>
-
-            <div id="breathingCircle" class="circle">
-                Ready? 🌿
-            </div>
-
-            <p id="breathingStatus" class="status">
-                Press the button when you're ready.
-            </p>
-
-            <button id="breathingButton" class="main-button">
-                🌬️ Start Breathing
-            </button>
-        </section>
-
-
-        <!-- AFFIRMATIONS -->
-        <section class="card">
-            <h2>🌸 Your Little Reminder</h2>
-
-            <div id="affirmation" class="affirmation">
-                You are doing better than you think. 💗
-            </div>
-
-            <button id="affirmationButton" class="main-button">
-                ✨ Give Me A Reminder
-            </button>
-        </section>
-
-
-        <!-- SURPRISE -->
-        <section class="card surprise-section">
-            <h2>🎁 Feeling Stressed?</h2>
-
-            <p>
-                Open this whenever you need a little reminder.
-            </p>
-
-            <button id="surpriseButton" class="main-button">
-                💌 Open My Message
-            </button>
-
-            <div id="surprise" class="surprise">
-                <h3>Hey, beautiful soul 🌷</h3>
-
-                <p>
-                    Whatever is stressing you right now,
-                    you don't have to figure everything out immediately.
+                <p class="message">
+                    I know things can get stressful sometimes,
+                    so I made this little place for you.
                 </p>
 
-                <p>
-                    Take things one moment at a time.
-                    Drink some water, breathe slowly,
-                    and give yourself permission to rest. 🌿
+                <div class="divider"></div>
+
+                <p class="question">
+                    Do you love me? 🥺
                 </p>
 
-                <p>
-                    You are important.
-                    Your feelings matter.
-                    And you deserve kindness. 💗
-                </p>
+                <div class="buttons">
 
-                <strong>
-                    Now give yourself a little smile. 🥺💕
-                </strong>
-            </div>
-        </section>
+                    <button id="yesButton" type="button">
+                        Yes ❤️
+                    </button>
 
+                    <button id="noButton" type="button">
+                        No 😭
+                    </button>
 
-        <!-- FINAL MESSAGE -->
-        <section class="final-message">
-            <div class="final-heart">💗</div>
+                </div>
 
-            <h2>Always Remember...</h2>
+                <div id="response" aria-live="polite"></div>
 
-            <p>
-                You are loved.
-            </p>
-
-            <p>
-                You are appreciated.
-            </p>
-
-            <p>
-                You are never alone.
-            </p>
-
-            <div class="big-message">
-                Take care of yourself, okay? 🌷
             </div>
 
-            <div class="signature">
-                Made with love 💕
-            </div>
         </section>
 
     </main>
-
-
-    <footer>
-        <p>For the person who deserves a little peace today 🌸</p>
-    </footer>
-
 
     <script src="script.js"></script>
 
 </body>
 </html>
+```
