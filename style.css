@@ -5,97 +5,440 @@
     padding: 0;
 }
 
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
 body {
+    min-width: 280px;
     min-height: 100vh;
+    min-height: 100dvh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #fff5f9, transparent 35%),
+        linear-gradient(135deg, #ffd6e7, #ffeef5);
+
+    color: #333;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+/* MAIN PAGE */
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffd6e7, #ffeef5);
-    overflow: hidden;
+
+    padding: 30px 16px;
+
+    position: relative;
 }
+
+/* CARD */
 
 .container {
-    width: 90%;
-    max-width: 500px;
-    padding: 40px 25px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 25px;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    position: relative;
+
+    width: 100%;
+    max-width: 520px;
+
+    padding: 3px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #ff8fb3,
+        #ffffff,
+        #ffb6ce
+    );
+
+    box-shadow:
+        0 20px 50px rgba(231, 84, 128, 0.18),
+        0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
-.heart {
-    font-size: 70px;
-    animation: heartbeat 1.2s infinite;
-    margin-bottom: 15px;
+/* OUTLINE */
+
+.outline {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 30px;
+
+    pointer-events: none;
+
+    z-index: 3;
 }
+
+/* CARD CONTENT */
+
+.content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    padding: 45px 32px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-radius: 27px;
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+/* HEART */
+
+.heart {
+    display: inline-block;
+
+    font-size: clamp(55px, 14vw, 78px);
+
+    line-height: 1;
+
+    margin-bottom: 20px;
+
+    animation: heartbeat 1.2s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 5px 8px rgba(231, 84, 128, 0.2));
+}
+
+/* TITLE */
 
 h1 {
     color: #e75480;
-    font-size: 36px;
-    margin-bottom: 20px;
+
+    font-size: clamp(30px, 8vw, 40px);
+
+    line-height: 1.2;
+
+    margin-bottom: 18px;
+
+    font-weight: 700;
 }
 
+/* MESSAGE */
+
 .message {
-    color: #555;
-    font-size: 17px;
-    line-height: 1.6;
-    margin-bottom: 25px;
+    max-width: 430px;
+
+    margin: 0 auto 25px;
+
+    color: #5c5c5c;
+
+    font-size: clamp(16px, 4.5vw, 18px);
+
+    line-height: 1.7;
 }
+
+/* DIVIDER */
+
+.divider {
+    width: 70px;
+    height: 3px;
+
+    margin: 0 auto 26px;
+
+    border-radius: 10px;
+
+    background: #ff9fbd;
+}
+
+/* QUESTION */
 
 .question {
     color: #333;
-    font-size: 23px;
+
+    font-size: clamp(20px, 5.5vw, 25px);
+
+    line-height: 1.4;
+
     font-weight: bold;
-    margin-bottom: 25px;
+
+    margin-bottom: 28px;
 }
+
+/* BUTTONS */
 
 .buttons {
+    width: 100%;
+
     display: flex;
+
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
 }
+
+/* BUTTON */
 
 button {
+    min-width: 125px;
+    min-height: 52px;
+
+    padding: 13px 25px;
+
     border: none;
-    padding: 13px 28px;
+
     border-radius: 30px;
+
+    font-family: inherit;
+
     font-size: 17px;
+
     font-weight: bold;
+
     cursor: pointer;
-    transition: 0.2s ease;
+
+    touch-action: manipulation;
+
+    -webkit-tap-highlight-color: transparent;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
 }
+
+/* YES */
 
 #yesButton {
-    background: #ff5c8a;
     color: white;
+
+    background: #ff5c8a;
+
+    box-shadow:
+        0 6px 15px rgba(255, 92, 138, 0.25);
 }
+
+#yesButton:hover {
+    background: #f34f7e;
+
+    transform: translateY(-2px) scale(1.04);
+
+    box-shadow:
+        0 9px 20px rgba(255, 92, 138, 0.3);
+}
+
+/* NO */
 
 #noButton {
-    background: #eeeeee;
     color: #555;
+
+    background: #eeeeee;
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.08);
 }
 
-button:hover {
-    transform: scale(1.08);
+#noButton:hover {
+    background: #e4e4e4;
+
+    transform: translateY(-2px) scale(1.04);
 }
+
+/* TOUCH */
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus-visible {
+    outline: 3px solid #e75480;
+
+    outline-offset: 4px;
+}
+
+/* RESPONSE */
 
 #response {
-    margin-top: 25px;
+    width: 100%;
+
+    margin-top: 28px;
+
     color: #e75480;
-    font-size: 22px;
+
+    font-size: clamp(19px, 5vw, 23px);
+
+    line-height: 1.6;
+
     font-weight: bold;
-    line-height: 1.5;
+
+    overflow-wrap: anywhere;
 }
 
+/* PHONE */
+
+@media (max-width: 600px) {
+
+    .page {
+        align-items: flex-start;
+
+        padding:
+            max(20px, env(safe-area-inset-top))
+            12px
+            max(30px, env(safe-area-inset-bottom));
+    }
+
+    .container {
+        max-width: 100%;
+
+        border-radius: 25px;
+    }
+
+    .content {
+        padding: 35px 20px;
+
+        border-radius: 22px;
+    }
+
+    .heart {
+        margin-bottom: 16px;
+    }
+
+    h1 {
+        margin-bottom: 15px;
+    }
+
+    .message {
+        margin-bottom: 22px;
+    }
+
+    .divider {
+        margin-bottom: 23px;
+    }
+
+    .question {
+        margin-bottom: 23px;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    button {
+        flex: 1 1 120px;
+
+        max-width: 180px;
+    }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 380px) {
+
+    .page {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .content {
+        padding: 30px 16px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 320px) {
+
+    .content {
+        padding: 27px 14px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+
+    .question {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+/* LANDSCAPE PHONE */
+
+@media (max-height: 520px) and (orientation: landscape) {
+
+    .page {
+        align-items: flex-start;
+
+        padding-top: 20px;
+        padding-bottom: 25px;
+    }
+
+    .container {
+        margin: 0 auto;
+    }
+
+    .content {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .heart {
+        font-size: 55px;
+        margin-bottom: 12px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .heart,
+    button {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* HEART ANIMATION */
+
 @keyframes heartbeat {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
     }
 
     50% {
-        transform: scale(1.15);
+        transform: scale(1.12);
     }
 }
 
